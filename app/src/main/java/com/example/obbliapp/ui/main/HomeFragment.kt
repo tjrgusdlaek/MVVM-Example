@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.obbliapp.adapter.HomeAdapter
 import com.example.obbliapp.data.entities.ContentEntity
@@ -22,10 +23,8 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
-    private var TAG = "HomeFragment"
     private lateinit var binding : FragmentHomeBinding
     private val viewModel: HomeViewModel by activityViewModels()
-    @Inject lateinit var move: HomeRepository
     private lateinit var adapter: HomeAdapter
 
     override fun onCreateView(
@@ -40,30 +39,17 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    fun move(view :View){
-        move.moveToAddContent()
-    }
 
     private fun initView() {
-        binding.homeRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-//        adapter = HomeAdapter(mutableListOf()){contentEntity ->
-//            Toast.makeText(requireContext(),  "${contentEntity.title} 입니다",Toast.LENGTH_SHORT).show()
-//        }
+        binding.homeRecyclerView.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+
+        binding.homeRecyclerView.addItemDecoration(
+            DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
         adapter = HomeAdapter()
         binding.homeRecyclerView.adapter = adapter
         viewModel.contentList.observe(viewLifecycleOwner, Observer {
-            Log.d("onResume_" ,it.toString())
             adapter.submitList(it)
         })
     }
 
-    override fun onResume() {
-        super.onResume()
-
-    }
-
-    override fun onStop() {
-        super.onStop()
-
-    }
 }

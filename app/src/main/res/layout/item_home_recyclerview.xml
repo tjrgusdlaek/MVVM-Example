@@ -15,12 +15,15 @@
     android:layout_width="match_parent"
     android:onClick="@{clickListener}"
     android:layout_height="wrap_content">
+
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:text="@{contentData.title}"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,10 +33,13 @@
 
     <TextView
         android:id="@+id/addressText"
-        android:layout_width="317dp"
+        android:layout_width="320dp"
         android:layout_height="19dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:text="@{contentData.address}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,27 +51,27 @@
         android:id="@+id/distanceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
         android:layout_marginTop="26dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="8dp"
         android:text="@{contentData.distance}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/addressText"
         app:layout_constraintTop_toBottomOf="@+id/needPeopleNumber"
-        tools:text="1km" />
+        tools:text="123" />
 
 
     <TextView
         android:id="@+id/needPeopleNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="28dp"
         android:text="@{contentData.needPeopleNumber}"
         app:layout_constraintBottom_toTopOf="@+id/distanceText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="123" />
 
 
 

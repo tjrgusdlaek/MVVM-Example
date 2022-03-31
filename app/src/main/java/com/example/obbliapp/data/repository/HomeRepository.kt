@@ -1,5 +1,7 @@
 package com.example.obbliapp.data.repository
 
+import android.content.Context
+
 interface HomeRepository {
-    fun moveToAddContent()
+    fun moveToAddContent(context : Context)
 }
