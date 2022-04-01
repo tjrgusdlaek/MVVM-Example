@@ -6,11 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.example.obbliapp.R
 import com.example.obbliapp.databinding.ActivityAddContentBinding
-import com.example.obbliapp.databinding.ActivityMainBinding
 import com.example.obbliapp.ui.main.MainActivity
-import com.example.obbliapp.viewModel.AddContentViewModel
+import com.example.obbliapp.ui.viewModel.AddContentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

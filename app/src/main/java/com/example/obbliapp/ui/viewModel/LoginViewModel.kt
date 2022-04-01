@@ -1,4 +1,4 @@
-package com.example.obbliapp.viewModel
+package com.example.obbliapp.ui.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

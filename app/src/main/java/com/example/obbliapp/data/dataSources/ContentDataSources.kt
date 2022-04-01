@@ -1,4 +1,4 @@
-package com.example.obbliapp.data.domain
+package com.example.obbliapp.data.dataSources
 
 import com.example.obbliapp.data.entities.ContentEntity
 import com.example.obbliapp.data.local.ContentDao
@@ -8,7 +8,7 @@ import kotlinx.coroutines.withContext
 
 import javax.inject.Inject
 
-class SaveContentData @Inject constructor(private val contentDao: ContentDao, private val ioDispatcher : CoroutineDispatcher,) :
+class ContentDataSources @Inject constructor(private val contentDao: ContentDao, private val ioDispatcher : CoroutineDispatcher,) :
     ContentDataRepository {
 
     override suspend fun addContents(title: String, address: String, distance:String , number:String) = withContext(ioDispatcher){

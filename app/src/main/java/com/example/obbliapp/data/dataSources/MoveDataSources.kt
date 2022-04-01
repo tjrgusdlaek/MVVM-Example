@@ -1,14 +1,13 @@
-package com.example.obbliapp.data.domain
+package com.example.obbliapp.data.dataSources
 
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import com.example.obbliapp.data.repository.HomeRepository
+import com.example.obbliapp.data.repository.MoveRepository
 import com.example.obbliapp.ui.addContent.AddContentActivity
 import javax.inject.Inject
 
-class HomeImplement @Inject constructor() : HomeRepository {
+class MoveDataSources @Inject constructor() : MoveRepository {
 
     override fun moveToAddContent(context: Context) {
         val intent = Intent(context, AddContentActivity::class.java)

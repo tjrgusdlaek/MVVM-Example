@@ -1,4 +1,4 @@
-package com.example.obbliapp.viewModel
+package com.example.obbliapp.ui.viewModel
 
 import android.content.Context
 import androidx.lifecycle.*
@@ -6,7 +6,7 @@ import androidx.lifecycle.*
 import com.example.obbliapp.R
 import com.example.obbliapp.data.entities.ContentEntity
 import com.example.obbliapp.data.repository.ContentDataRepository
-import com.example.obbliapp.data.repository.HomeRepository
+import com.example.obbliapp.data.repository.MoveRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ActivityContext
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -20,7 +20,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val repository: ContentDataRepository,
-    private val homeRepository: HomeRepository) : ViewModel() {
+    private val MoveRepository: MoveRepository) : ViewModel() {
 
 
     private val _contentList = MutableLiveData<List<ContentEntity>>()
@@ -33,6 +33,6 @@ class HomeViewModel @Inject constructor(
     }
 
     fun move(){
-        homeRepository.moveToAddContent(context)
+        MoveRepository.moveToAddContent(context)
     }
 }

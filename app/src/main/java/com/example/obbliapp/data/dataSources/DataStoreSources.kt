@@ -1,4 +1,4 @@
-package com.example.obbliapp.data.domain
+package com.example.obbliapp.data.dataSources
 
 
 import android.content.Context
@@ -12,7 +12,7 @@ import com.example.obbliapp.ui.main.MainActivity
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 
-class SaveDataStore @Inject constructor(private val context: Context) : DataStoreRepository {
+class DataStoreSources @Inject constructor(private val context: Context) : DataStoreRepository {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name =  "autoLogin")
 
 

@@ -5,8 +5,8 @@ import androidx.room.Room
 import com.example.obbliapp.data.local.ContentDao
 import com.example.obbliapp.data.repository.ContentDataRepository
 import com.example.obbliapp.data.local.ContentDatabase
-import com.example.obbliapp.data.domain.SaveDataStore
-import com.example.obbliapp.data.domain.SaveContentData
+import com.example.obbliapp.data.dataSources.DataStoreSources
+import com.example.obbliapp.data.dataSources.ContentDataSources
 import com.example.obbliapp.data.repository.DataStoreRepository
 import dagger.Module
 import dagger.Provides
@@ -27,7 +27,7 @@ object AppModule {
     @Provides
     fun provideDataStoreRepository(
         @ApplicationContext context: Context
-    ): DataStoreRepository = SaveDataStore(context)
+    ): DataStoreRepository = DataStoreSources(context)
 
     @Singleton
     @Provides
@@ -37,7 +37,7 @@ object AppModule {
     @Provides
     fun provideRepository(
         ContentDao: ContentDao, ioDispatcher: CoroutineDispatcher): ContentDataRepository =
-        SaveContentData(ContentDao,ioDispatcher)
+        ContentDataSources(ContentDao,ioDispatcher)
 
     @Provides
     @Singleton

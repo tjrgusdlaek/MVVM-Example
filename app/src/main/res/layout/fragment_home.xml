@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.obbliapp.viewModel.HomeViewModel" />
+            type="com.example.obbliapp.ui.viewModel.HomeViewModel" />
 
         <variable
             name="fragment"

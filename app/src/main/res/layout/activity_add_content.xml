@@ -8,7 +8,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.obbliapp.viewModel.AddContentViewModel" />
+            type="com.example.obbliapp.ui.viewModel.AddContentViewModel" />
 
         <variable
             name="activity"

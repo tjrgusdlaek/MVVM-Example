@@ -16,18 +16,15 @@ import com.example.obbliapp.databinding.ItemHomeRecyclerviewBinding
 
 
 class HomeAdapter (): ListAdapter<ContentEntity,RecyclerView.ViewHolder>(MyDiffCallback()) {
-//    private val contentEntity: MutableList<ContentEntity>, private val itemClick: (ContentEntity) -> Unit
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ViewHolder(
             ItemHomeRecyclerviewBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-//        if(holder is ViewHolder) holder.bind(getItem(position))
         val item = getItem(position)
         (holder as ViewHolder).bind(item)
     }
-
 
     inner class ViewHolder(private val binding: ItemHomeRecyclerviewBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -38,16 +35,6 @@ class HomeAdapter (): ListAdapter<ContentEntity,RecyclerView.ViewHolder>(MyDiffC
                 }
             }
         }
-//        fun bind(contentEntity: ContentEntity) = with(binding) {
-//
-//            titleText.text = contentEntity.title
-//            addressText.text = contentEntity.address
-//            distanceText.text = contentEntity.distance
-//            needPeopleNumber.text = contentEntity.needPeopleNumber
-//
-//            itemView.setOnClickListener { itemClick(contentEntity) }
-//        }
-
         fun bind(item: ContentEntity) {
             binding.apply {
                 contentData = item
