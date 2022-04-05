@@ -41,11 +41,4 @@ class AddContentActivity : AppCompatActivity() {
         binding.etDistance.setText("")
         binding.etNeedPersonNumber.setText("")
     }
-
-    override fun onBackPressed() {
-        val intent = Intent(this, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-        startActivity(intent)
-        super.onBackPressed()
-    }
 }
