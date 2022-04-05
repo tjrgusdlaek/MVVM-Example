@@ -1,4 +1,4 @@
-package com.example.obbliapp.data.entities
+package com.example.obbliapp.data.model.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

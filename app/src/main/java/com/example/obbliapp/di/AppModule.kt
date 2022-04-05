@@ -2,11 +2,11 @@ package com.example.obbliapp.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.obbliapp.data.local.ContentDao
 import com.example.obbliapp.data.repository.ContentDataRepository
-import com.example.obbliapp.data.local.ContentDatabase
 import com.example.obbliapp.data.dataSources.DataStoreSources
 import com.example.obbliapp.data.dataSources.ContentDataSources
+import com.example.obbliapp.data.model.ContentDao
+import com.example.obbliapp.data.model.database.ContentDatabase
 import com.example.obbliapp.data.repository.DataStoreRepository
 import dagger.Module
 import dagger.Provides

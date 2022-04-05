@@ -1,21 +1,17 @@
-package com.example.obbliapp.adapter
+package com.example.obbliapp.ui.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.obbliapp.data.entities.ContentEntity
+import com.example.obbliapp.data.model.entities.ContentEntity
 import com.example.obbliapp.databinding.ItemHomeRecyclerviewBinding
+import com.example.obbliapp.ui.viewModel.ContentViewModel
 
 
-
-class HomeAdapter (): ListAdapter<ContentEntity,RecyclerView.ViewHolder>(MyDiffCallback()) {
+class HomeAdapter(private val viewModel : ContentViewModel) : ListAdapter<ContentEntity,RecyclerView.ViewHolder>(MyDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ViewHolder(
             ItemHomeRecyclerviewBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -24,6 +20,12 @@ class HomeAdapter (): ListAdapter<ContentEntity,RecyclerView.ViewHolder>(MyDiffC
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = getItem(position)
         (holder as ViewHolder).bind(item)
+
+        holder.itemView.setOnLongClickListener {
+            viewModel.deleteContent(item.id)
+            viewModel.getContent()
+            true
+        }
     }
 
     inner class ViewHolder(private val binding: ItemHomeRecyclerviewBinding) : RecyclerView.ViewHolder(binding.root) {

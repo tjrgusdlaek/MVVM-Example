@@ -1,21 +1,20 @@
 package com.example.obbliapp.ui.addContent
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import com.example.obbliapp.data.model.entities.ContentEntity
 import com.example.obbliapp.databinding.ActivityAddContentBinding
-import com.example.obbliapp.ui.main.MainActivity
-import com.example.obbliapp.ui.viewModel.AddContentViewModel
+import com.example.obbliapp.ui.viewModel.ContentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class AddContentActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityAddContentBinding
-    private val viewModel: AddContentViewModel by viewModels()
+    private val viewModel: ContentViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +31,11 @@ class AddContentActivity : AppCompatActivity() {
         val address = binding.etAddress.text.toString()
         val distance = binding.etDistance.text.toString()
         val needNumber = binding.etNeedPersonNumber.text.toString()
-        viewModel.addContentList(title,address,distance,needNumber)
-        Toast.makeText(this, "저장되었습니다." ,Toast.LENGTH_SHORT).show()
 
+        val contentEntity = ContentEntity(title,address,distance,needNumber)
+        viewModel.addContent(contentEntity)
+
+        Toast.makeText(this, "저장되었습니다." ,Toast.LENGTH_SHORT).show()
         binding.etTitle.setText("")
         binding.etAddress.setText("")
         binding.etDistance.setText("")

@@ -9,15 +9,15 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.obbliapp.adapter.HomeAdapter
+import com.example.obbliapp.ui.adapter.HomeAdapter
 import com.example.obbliapp.databinding.FragmentHomeBinding
-import com.example.obbliapp.ui.viewModel.HomeViewModel
+import com.example.obbliapp.ui.viewModel.ContentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
     private lateinit var binding : FragmentHomeBinding
-    private val viewModel: HomeViewModel by activityViewModels()
+    private val viewModel: ContentViewModel by activityViewModels()
     private lateinit var homeAdapter: HomeAdapter
 
     override fun onCreateView(
@@ -32,7 +32,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initView() {
-        homeAdapter = HomeAdapter()
+        homeAdapter = HomeAdapter(viewModel)
         binding.homeRecyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
             addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
@@ -41,5 +41,10 @@ class HomeFragment : Fragment() {
                 homeAdapter.submitList(it)
             })
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getContent()
     }
 }
