@@ -13,9 +13,11 @@
         <entry key="..\:/Users/Jang/AndroidStudioProjects/ObbliApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Jang/AndroidStudioProjects/ObbliApp/app/src/main/res/layout/fragment_calendar.xml" value="0.2" />
         <entry key="..\:/Users/Jang/AndroidStudioProjects/ObbliApp/app/src/main/res/layout/fragment_chat.xml" value="0.2046875" />
+        <entry key="..\:/Users/Jang/AndroidStudioProjects/ObbliApp/app/src/main/res/layout/fragment_first.xml" value="0.2749094202898551" />
         <entry key="..\:/Users/Jang/AndroidStudioProjects/ObbliApp/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/Jang/AndroidStudioProjects/ObbliApp/app/src/main/res/layout/fragment_my_page.xml" value="0.2046875" />
         <entry key="..\:/Users/Jang/AndroidStudioProjects/ObbliApp/app/src/main/res/layout/fragment_view_pager.xml" value="0.2046875" />
+        <entry key="..\:/Users/Jang/AndroidStudioProjects/ObbliApp/app/src/main/res/layout/item_calendar_date_list.xml" value="0.2749094202898551" />
         <entry key="..\:/Users/Jang/AndroidStudioProjects/ObbliApp/app/src/main/res/layout/item_calendar_day_recyclerview.xml" value="0.23083403538331929" />
         <entry key="..\:/Users/Jang/AndroidStudioProjects/ObbliApp/app/src/main/res/layout/item_calendar_month_recyclerview.xml" value="0.25" />
         <entry key="..\:/Users/Jang/AndroidStudioProjects/ObbliApp/app/src/main/res/layout/item_calendar_recyclerview.xml" value="0.36614583333333334" />

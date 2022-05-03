@@ -1,57 +1,47 @@
 package com.example.obbliapp.ui.main
 
 import android.os.Bundle
-import android.util.Log
-import androidx.navigation.fragment.findNavController
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.PagerSnapHelper
-import androidx.viewpager2.widget.ViewPager2
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.obbliapp.R
 import com.example.obbliapp.databinding.FragmentCalendarBinding
-import com.example.obbliapp.ui.adapter.CalendarMonthAdapter
+import com.example.obbliapp.ui.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.SimpleDateFormat
+import java.util.*
 
 @AndroidEntryPoint
-class CalendarFragment : Fragment() {
-    private lateinit var binding : FragmentCalendarBinding
+class CalendarFragment (index: Int): BaseFragment<FragmentCalendarBinding>(FragmentCalendarBinding::inflate){
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentCalendarBinding.inflate(inflater,container,false)
+    private var pageIndex = index
+    private lateinit var currentDate: Date
 
-        val monthListManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        val monthListAdapter = CalendarMonthAdapter()
 
-//        binding.viewPager.apply {
-//            adapter = monthListAdapter
-//            orientation = ViewPager2.ORIENTATION_HORIZONTAL
-////            registerOnPageChangeCallback(object :ViewPager2.OnPageChangeCallback(){
-////                override fun onPageSelected(position: Int) {
-////                    super.onPageSelected(position)
-////                    Log.d("ViewPagerFragment", "Page ${position+1}")
-////                }
-////            })
-//        }
-
-        binding.button.setOnClickListener {
-            findNavController().navigate(R.id.action_chatFragment_to_editCalendar)
-        }
-
-        binding.calendarCustom.apply {
-            layoutManager = monthListManager
-            adapter = monthListAdapter
-            scrollToPosition(Int.MAX_VALUE/2)
-        }
-        val snap = PagerSnapHelper()
-        snap.attachToRecyclerView(binding.calendarCustom)
-        return binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initView(view)
+        initCalendar()
     }
 
+
+    private fun initView(view: View) {
+        pageIndex -= (Int.MAX_VALUE / 2)
+        val date = Calendar.getInstance().run {
+            add(Calendar.MONTH, pageIndex)
+            time
+        }
+        currentDate = date
+        val datetime: String = SimpleDateFormat(requireContext().getString(R.string.calendar_year_month_format), Locale.KOREA).format(date.time)
+        binding.calendarYearMonthText.text = datetime
+    }
+
+    private fun initCalendar() {
+        val calendarAdapter = CalendarAdapter(requireContext(), binding.calendarLayout, currentDate)
+        binding.calendarView.apply {
+            adapter = calendarAdapter
+            layoutManager = GridLayoutManager(requireContext(), 7, GridLayoutManager.VERTICAL, false)
+            setHasFixedSize(true)
+        }
+    }
 
 }

@@ -6,15 +6,6 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/chatFragment"
-        android:name="com.example.obbliapp.ui.main.CalendarFragment"
-        android:label="fragment_chat"
-        tools:layout="@layout/fragment_calendar">
-        <action
-            android:id="@+id/action_chatFragment_to_editCalendar"
-            app:destination="@id/editCalendar" />
-    </fragment>
-    <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.obbliapp.ui.main.HomeFragment"
         android:label="fragment_home"
@@ -24,9 +15,8 @@
         android:name="com.example.obbliapp.ui.main.MyPageFragment"
         android:label="fragment_my_page"
         tools:layout="@layout/fragment_my_page" />
-    <activity
-        android:id="@+id/editCalendar"
-        android:name="com.example.obbliapp.ui.editCalendar.EditCalendar"
-        android:label="activity_edit_calendar"
-        tools:layout="@layout/activity_edit_calendar" />
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.obbliapp.ui.main.FirstFragment"
+        android:label="fragment_first" />
 </navigation>
