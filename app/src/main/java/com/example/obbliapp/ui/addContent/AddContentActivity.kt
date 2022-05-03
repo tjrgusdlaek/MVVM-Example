@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.example.obbliapp.data.model.entities.ContentEntity
+import com.example.obbliapp.data.entities.ContentEntity
 import com.example.obbliapp.databinding.ActivityAddContentBinding
 import com.example.obbliapp.ui.viewModel.ContentViewModel
 import dagger.hilt.android.AndroidEntryPoint

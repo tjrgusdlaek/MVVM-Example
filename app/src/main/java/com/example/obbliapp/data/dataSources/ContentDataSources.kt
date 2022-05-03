@@ -1,7 +1,7 @@
 package com.example.obbliapp.data.dataSources
 
-import com.example.obbliapp.data.model.entities.ContentEntity
-import com.example.obbliapp.data.model.ContentDao
+import com.example.obbliapp.data.entities.ContentEntity
+import com.example.obbliapp.model.ContentDao
 import com.example.obbliapp.data.repository.ContentDataRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext

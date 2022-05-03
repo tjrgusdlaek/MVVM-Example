@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.*
 
-import com.example.obbliapp.data.model.entities.ContentEntity
+import com.example.obbliapp.data.entities.ContentEntity
 import com.example.obbliapp.data.repository.ContentDataRepository
 import com.example.obbliapp.ui.addContent.AddContentActivity
 import dagger.hilt.android.lifecycle.HiltViewModel

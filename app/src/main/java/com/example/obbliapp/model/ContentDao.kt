@@ -1,10 +1,9 @@
-package com.example.obbliapp.data.model
+package com.example.obbliapp.model
 
-import android.database.Cursor
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.obbliapp.data.model.entities.ContentEntity
+import com.example.obbliapp.data.entities.ContentEntity
 
 
 @Dao

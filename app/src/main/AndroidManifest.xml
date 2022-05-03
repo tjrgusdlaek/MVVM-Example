@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ObbliApp">
         <activity
+            android:name=".ui.editCalendar.EditCalendar"
+            android:exported="false" />
+        <activity
             android:name=".ui.addContent.AddContentActivity"
             android:exported="false" />
         <activity

@@ -1,6 +1,6 @@
 package com.example.obbliapp.data.repository
 
-import com.example.obbliapp.data.model.entities.ContentEntity
+import com.example.obbliapp.data.entities.ContentEntity
 
 
 interface ContentDataRepository {

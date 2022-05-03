@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.obbliapp.data.model.entities.ContentEntity
+import com.example.obbliapp.data.entities.ContentEntity
 import com.example.obbliapp.databinding.ItemHomeRecyclerviewBinding
 import com.example.obbliapp.ui.viewModel.ContentViewModel
 

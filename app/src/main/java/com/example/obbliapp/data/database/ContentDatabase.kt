@@ -1,9 +1,9 @@
-package com.example.obbliapp.data.model.database
+package com.example.obbliapp.data.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.obbliapp.data.model.entities.ContentEntity
-import com.example.obbliapp.data.model.ContentDao
+import com.example.obbliapp.data.entities.ContentEntity
+import com.example.obbliapp.model.ContentDao
 
 
 @Database(entities = [ContentEntity::class], version = 1, exportSchema = false)

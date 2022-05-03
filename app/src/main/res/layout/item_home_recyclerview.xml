@@ -8,7 +8,7 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="contentData"
-            type="com.example.obbliapp.data.model.entities.ContentEntity" />
+            type="com.example.obbliapp.data.entities.ContentEntity" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
