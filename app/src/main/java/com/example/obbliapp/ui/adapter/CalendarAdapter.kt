@@ -53,6 +53,5 @@ class CalendarAdapter(private val context: Context,private val calendarLayout: L
                 binding.itemCalendarDateText.alpha = 1f
             }
         }
-
     }
 }
